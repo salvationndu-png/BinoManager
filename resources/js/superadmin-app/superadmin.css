@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sa-bg: #ffffff;
+  --sa-card: #f9fafb;
+  --sa-border: #e5e7eb;
+  --sa-accent: #10b981;
+  --sa-muted: #6b7280;
+  --sa-text: #111827;
+}
+
+.dark {
+  --sa-bg: #09090b;
+  --sa-card: #111113;
+  --sa-border: #27272a;
+  --sa-accent: #10b981;
+  --sa-muted: #71717a;
+  --sa-text: #ffffff;
+}
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-sa-bg: var(--sa-bg);
+  --color-sa-card: var(--sa-card);
+  --color-sa-border: var(--sa-border);
+  --color-sa-accent: var(--sa-accent);
+  --color-sa-muted: var(--sa-muted);
+  --color-sa-text: var(--sa-text);
+}
+
+@layer base {
+  body {
+    @apply bg-sa-bg text-sa-text font-sans antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-sa-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-sa-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sa-muted;
+}

@@ -1,0 +1,45 @@
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.env.production
+.env.local
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+/.fleet
+/.idea
+/.vscode
+storage/logs/*.log
+
+# Temporary/diagnostic files
+test-sanitization.php
+diagnose-login.php
+create-superadmin.php
+clear-cache.php
+PRODUCTION_READINESS_CHECKLIST.md
+PRODUCTION_READINESS_SUMMARY.md
+LOGIN_TROUBLESHOOTING.md
+LOGIN_FLOW_TEST.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Sensitive data
+/storage/app/public/logos/*
+!/storage/app/public/logos/.gitkeep

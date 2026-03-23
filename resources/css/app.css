@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── SuperAdmin SPA tokens ─────────────────────────────────────────────── */
+:root {
+  --sa-bg: #ffffff;
+  --sa-card: #f9fafb;
+  --sa-border: #e5e7eb;
+  --sa-accent: #10b981;
+  --sa-muted: #6b7280;
+  --sa-text: #111827;
+}
+.dark {
+  --sa-bg: #09090b;
+  --sa-card: #111113;
+  --sa-border: #27272a;
+  --sa-accent: #10b981;
+  --sa-muted: #71717a;
+  --sa-text: #ffffff;
+}
+
+/* ── Hide scrollbar utility ────────────────────────────────────────────── */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

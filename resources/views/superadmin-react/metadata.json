@@ -1,0 +1,5 @@
+{
+  "name": "BinoManager SuperAdmin",
+  "description": "A comprehensive super-admin control panel for the BinoManager SaaS platform, featuring tenant management, revenue tracking, and platform configuration.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,136 @@
+
+  /* -----------------------------
+     Glassmorphic Sidebar — Consolidated
+     ----------------------------- */
+
+  /* Base glass (desktop default) */
+
+    /* from your reference */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: none } }
+    .anim-fade-in-up { animation: fadeInUp .28s cubic-bezier(.2,.9,.2,1) both; }
+    .no-scroll::-webkit-scrollbar { display: none; } .no-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    .focus-ring:focus { outline: 3px solid rgba(99,241,182,.58); outline-offset: 2px; }
+    /* small visual niceties */
+    .table-row-appear { animation: fadeInUp .18s ease both; }
+    thead th.sticky { position: sticky; top: 0; z-index: 10; background: white; }
+  .nav-accent { background: linear-gradient(180deg, rgba(144, 241, 99, 0.18), rgba(144, 241, 99, 0.12)); }
+
+  .glass-base {
+    background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.60));
+    border: 1px solid rgba(255,255,255,0.45);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    color: #0f172a;
+  }
+
+  /* Subtle top/bottom inner divider for brand/logout areas */
+  .glass-inner-line {
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+  }
+
+  /* Icon chip (slightly elevated frosted chip) */
+  .icon-chip,
+  .icon-surface {
+    background: rgba(15,23,42,0.04);
+    border-radius: 8px;
+    transition: transform .12s ease, background-color .12s ease, box-shadow .12s ease;
+    display: inline-grid;
+    place-items: center;
+  }
+  .nav-item:hover .icon-chip { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(2,6,23,0.06); }
+
+  /* Active left accent (single canonical definition) */
+  .nav-accent { position: relative; }
+  .nav-accent::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    width: 3px;
+    border-radius: 3px;
+    background: linear-gradient(180deg,#0f172a,#0b5e57);
+    box-shadow: 0 6px 18px rgba(11,94,87,0.08);
+  }
+
+  /* Icon rules (single consolidated rule for filled icons) */
+  .nav-icon svg {
+    width: 20px;
+    height: 20px;
+    transition: transform .12s ease, fill .12s ease, color .12s ease, opacity .12s ease;
+    display: block;
+    fill: #0f172a;     /* default filled color */
+    color: #0f172a;
+    opacity: 0.92;
+  }
+  /* Active page icon color (deep teal) */
+  a[aria-current="page"] .nav-icon svg { fill: #0b5e57; color: #0b5e57; opacity: 1; }
+  /* hover lift for icons */
+  .nav-item:hover .nav-icon svg { transform: translateY(-2px); }
+
+  /* Label colors */
+  .nav-label { color: #0f172a; }
+  .nav-sub { color: #475569; }
+
+  /* Focus ring refinement */
+  .focus-ring:focus {
+    outline: 3px solid rgba(14,165,140,0.12);
+    outline-offset: 2px;
+  }
+
+  /* Slight hover lift for nav items */
+  .nav-item {
+    transform: translateZ(0);
+    transition: box-shadow .18s ease, transform .12s ease, background-color .12s ease;
+  }
+  .nav-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+  }
+
+  /* Reduced transparency / no-blur fallback for accessibility */
+  @media (prefers-reduced-transparency: reduce), (prefers-reduced-motion: reduce) {
+    .glass-base { backdrop-filter: none; -webkit-backdrop-filter: none; background: #ffffff; }
+    .glass-inner-line { background: transparent; box-shadow: none; }
+  }
+
+  /* -----------------------------
+     MOBILE ENHANCEMENTS (<= 640px)
+     ----------------------------- */
+  @media (max-width: 640px) {
+    /* stronger opacity + stronger blur for clearer frosted look on phones */
+    .glass-base {
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.82));
+      backdrop-filter: blur(18px) saturate(130%);
+      -webkit-backdrop-filter: blur(18px) saturate(130%);
+      border: 1px solid rgba(255,255,255,0.60);
+      box-shadow: 0 18px 40px rgba(2,6,23,0.12);
+    }
+
+    .glass-inner-line {
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.72));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
+    }
+
+    /* slightly larger touch targets & spacing */
+    #sidebar .nav-item { padding-top: .9rem; padding-bottom: .9rem; border-radius: .7rem; }
+    #sidebar .w-9 { width: 44px; height: 44px; } /* slightly larger icon chips */
+    .icon-chip { border-radius: 10px; }
+
+    /* make close button more prominent on mobile */
+    #closeSidebar { width: 40px; height: 40px; }
+
+    /* increase contrast of icon chip on mobile for readability */
+    .icon-chip { background: rgba(15,23,42,0.06); }
+
+    /* optional dim overlay class when sidebar overlays content */
+    .sidebar-overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.18); z-index: 30; }
+
+    /* tiny-screen adjustments */
+    @media (max-width:420px) {
+      .nav-sub { display: none; } /* hide subtitle on tiny screens */
+      #sidebar { width: 78vw; }   /* narrower than full width */
+    }
+  }

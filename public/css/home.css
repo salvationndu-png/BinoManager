@@ -1,0 +1,16 @@
+
+    /* small animations + helpers */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: none } }
+    .anim-fade-in-up { animation: fadeInUp .28s cubic-bezier(.2,.9,.2,1) both; }
+
+    @keyframes slideIn { from { transform: translateX(-100%) } to { transform: translateX(0) } }
+    .anim-slide-in { animation: slideIn .28s cubic-bezier(.2,.9,.2,1) both; }
+
+    /* subtle left accent for active nav */
+    .nav-accent { background: linear-gradient(180deg, rgba(144, 241, 99, 0.18), rgba(144, 241, 99, 0.12)); }
+    /* hide sidebar scrollbar */
+    .no-scroll::-webkit-scrollbar { display: none; }
+    .no-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* accessible focus ring fallback */
+    .focus-ring:focus { outline: 3px solid rgba(99, 241, 182, 0.58); outline-offset: 2px; }

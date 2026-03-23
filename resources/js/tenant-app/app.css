@@ -1,0 +1,6 @@
+/* Import the main Laravel app CSS (includes Tailwind) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* The React SPA uses Tailwind classes from the Laravel config.
+   Primary colour is defined in tailwind.config.js as the teal palette.
+   No extra overrides needed here. */
