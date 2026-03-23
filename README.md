@@ -203,48 +203,6 @@ Central Domain (/)              Tenant Workspaces
 
 ---
 
-## 🔌 API Endpoints
-
-### Tenant Routes (Prefix: `/{tenant_slug}`)
-
-**Dashboard**
-- `GET /api/dashboard` - Dashboard metrics
-
-**Products**
-- `GET /products-list` - List products
-- `POST /add-product` - Create product (Admin)
-- `PUT /update-product/{id}` - Update product (Admin)
-- `DELETE /delete-product/{id}` - Delete product (Admin)
-
-**Stock**
-- `GET /stock-list` - List stock entries
-- `POST /add-stock` - Add stock (Admin)
-- `PATCH /update-stock/{id}` - Update quantity (Admin)
-- `DELETE /delete-stock/{id}` - Delete stock (Admin)
-
-**Sales**
-- `POST /add-sale` - Process sale (with locking)
-- `GET /track-sales-data` - Sales report
-
-**Team**
-- `GET /api/team` - List team members
-- `POST /team/invite` - Send invitation (Admin)
-- `DELETE /team/members/{id}` - Remove member (Admin)
-
-**Billing**
-- `GET /billing` - Subscription details
-- `POST /billing/checkout` - Initialize payment
-- `GET /billing/verify` - Verify payment
-
-### Super Admin Routes (Prefix: `/superadmin`)
-
-- `GET /api/dashboard` - Platform metrics
-- `GET /api/tenants` - List all tenants
-- `GET /api/plans` - Manage plans
-- `POST /tenants/{id}/suspend` - Suspend tenant
-- `POST /tenants/{id}/change-plan` - Change plan
-
----
 
 ## 🛠️ Development
 
